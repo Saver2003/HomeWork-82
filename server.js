@@ -5,6 +5,8 @@ const config = require('./config');
 const albums = require('./app/albums');
 const artists = require('./app/artists');
 const tracks = require('./app/tracks');
+const users = require('./app/users');
+const track_history = require('./app/track_history');
 
 const app = express();
 
@@ -23,6 +25,8 @@ db.once('open', () => {
   app.use('/albums', albums());
   app.use('/artists', artists());
   app.use('/tracks', tracks());
+  app.use('/users', users());
+  app.use('/track_history', track_history());
 
 
   app.listen(port, () => {
